@@ -7,7 +7,8 @@ type Dog struct {
 
 func TestInstancesOfStructsCanBeGeneratedWithFigureBrackets(t *T) {
 	fido := Dog{}
-	t.AssertEquals(String__, reflect.TypeOf(fido).Name())
+
+	t.AssertEquals("Dog", reflect.TypeOf(fido).Name())
 }
 
 type Dog2 struct {
@@ -24,10 +25,10 @@ func (d *Dog2) setName(name string) {
 
 func TestConstructorIsJustASeparateFunction(t *T) {
 	dog := NewDog2()
-	t.AssertEquals(String__, dog.name)
+	t.AssertEquals("Paul", dog.name)
 }
 
 func TestAnyoneCanAccessField(t *T) {
 	dog := &Dog2{"Fido"}
-	t.AssertEquals(String__, dog.name)
+	t.AssertEquals("Fido", dog.name)
 }

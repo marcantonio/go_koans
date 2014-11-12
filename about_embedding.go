@@ -45,12 +45,12 @@ func (t *ABimpl) getB() string {
 
 func TestEmbeddingInterface(t *T) {
 	var ab AB = &ABimpl{}
-	t.AssertEquals(String__, ab.getA())
-	t.AssertEquals(String__, ab.getB())
+	t.AssertEquals("A", ab.getA())
+	t.AssertEquals("B", ab.getB())
 }
 
 func TestEmbeddingStruct(t *T) {
 	ab := &ABembed{}
-	t.AssertEquals(String__, ab.getA())
-	t.AssertEquals(String__, ab.getB())
+	t.AssertEquals("Aimpl", ab.getA())
+	t.AssertEquals("Bimpl", ab.getB())
 }

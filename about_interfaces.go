@@ -12,5 +12,5 @@ func (t HellowerImpl) Hello() string {
 
 func TestAnyStructWithRequiredMethodsSatisfiesInterface(t *T) {
 	s := HellowerImpl("world").Hello()
-	t.AssertEquals(String__, s)
+	t.AssertEquals("Hello world", s)
 }

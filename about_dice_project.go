@@ -1,5 +1,7 @@
 package main
 
+import "math/rand"
+
 type DiceSet struct {
 	values []int
 }
@@ -7,6 +9,10 @@ type DiceSet struct {
 func (t *DiceSet) roll(n int) {
 	//Needs implementing
 	//Tip: rand.Int
+	t.values = make([]int, n)
+	for i := 0; i < n; i++ {
+		t.values[i] = rand.Intn(5) + 1
+	}
 }
 
 func TestCanCreateADiceSet(t *T) {

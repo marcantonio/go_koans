@@ -32,8 +32,31 @@ Your goal is to write the score method.
 */
 
 func score(diceArg []int) int {
-	//You need to write this method
-	return -1
+	counts := map[int]int{1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+	
+	totalScore := 0
+	for _, v := range diceArg {
+		switch {
+		case v == 1:
+			counts[v]++
+			totalScore += 100
+			if (counts[v] == 3) {
+				totalScore += 700
+			}
+		case v == 5:
+			counts[v]++
+			totalScore += 50
+			if (counts[v] == 3) {
+				totalScore += 350
+			}
+		default:
+			counts[v]++
+			if (counts[v] == 3) {
+				totalScore += v * 100
+			}
+		}
+	}
+	return totalScore
 }
 
 func TestScoreOfAnEmptyListIsZero(t *T) {

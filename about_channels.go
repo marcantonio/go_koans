@@ -33,6 +33,6 @@ func TestEveryChannelReceiveValue(t *T) {
 	}
 	<-wh
 	<-wh
-	t.AssertEquals(Int__, count)
+	t.AssertEquals(100, count)
 
 }

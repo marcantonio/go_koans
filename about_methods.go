@@ -23,26 +23,26 @@ func FunctionWithNamedReturnValues() (a int, b string) {
 func TestFunctionWithNamedReturnValues(t *T) {
 	intValue, stringValue := FunctionWithNamedReturnValues()
 
-	t.AssertEqualInt(Int__, intValue)
-	t.AssertTrue(String__ == stringValue)
+	t.AssertEqualInt(4, intValue)
+	t.AssertTrue("bye" == stringValue)
 }
 
 func TestFunctionWithMultipleReturnTypes(t *T) {
 	intValue, stringValue := FunctionWithMultipleReturnTypes()
 
-	t.AssertEqualInt(Int__, intValue)
-	t.AssertTrue(String__ == stringValue)
+	t.AssertEqualInt(3, intValue)
+	t.AssertTrue("hello" == stringValue)
 }
 
 func TestCallingAGlobalFunction(t *T) {
 	result := AGlobalFunction(3, 4)
-	t.AssertEqualInt(Int__, int(result))
+	t.AssertEqualInt(7, int(result))
 }
 
 func TestEveryTypeCanHaveMethods(t *T) {
 	v := Int(4)
 	result := v.Add(3)
-	t.AssertEqualInt(Int__, int(result))
+	t.AssertEqualInt(7, int(result))
 }
 
 type Interface interface {
@@ -55,7 +55,7 @@ type Implementation struct {
 // The declaration of this function makes
 // only a pointer to Implementation satisfy Interface.
 func (t *Implementation) ReturnValue() int {
-	return 1
+	return 2
 }
 
 func TestInterfaces(t *T) {
